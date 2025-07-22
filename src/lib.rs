@@ -15,7 +15,21 @@ pub fn matrix_power_rust<A>(
 where
     A: LinalgScalar,
     Matrix<A>: Dot<Matrix<A>, Output = Matrix<A>>
-{ }
+{
+    let mut result = Array2::eye(matrix.nrows()); // initializing identity matrix
+    let mut base = matrix.to_owned();
+
+    // implementing the binary exponentiation algorithm matrices
+    // works in O(log(N)) time 
+    while exponent > 0 {
+        if exponent % 2 == 1 {
+            result = result.dot(&base);
+        }
+        base = base.dot(&base);
+        exponent /= 2;
+    }
+    result
+}
 
 // Define a pyfunction: this is a function written in Rust, which is designed to 
 // take inputs from and return outputs to Python
