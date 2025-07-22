@@ -1,4 +1,7 @@
 use pyo3::prelude::*;
+use ndarray::linalg::Dot;
+use ndarray::{Array2, ArrayBase, Axis, Ix2, LinalgScalar, OwnedRepr};
+use std::ops::AddAssign;
 
 /// Formats the sum of two numbers as string.
 #[pyfunction]

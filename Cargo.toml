@@ -9,4 +9,6 @@ name = "coding_club"
 crate-type = ["cdylib"]
 
 [dependencies]
+ndarray = "0.16.1"
+num-traits = "0.2.19"
 pyo3 = "0.23.3"
