@@ -85,6 +85,9 @@ pub fn matrix_power(
         .into_iter()
         .map(|row| row.to_vec())
         .collect();
+
+    // 6. Return the result to Python
+    Ok(result_vecs)
 }
 
 /// A Python module implemented in Rust.
