@@ -75,6 +75,9 @@ pub fn matrix_power(
                                                                         // !^!
                                                         // This will return an error if the number 
                                                         // of elements doesn't match the shape
+
+    // 4. Call our all-Rust matrix power function
+    let result_matrix = matrix_power_rust(&rust_matrix, exponent);
 }
 
 /// A Python module implemented in Rust.
