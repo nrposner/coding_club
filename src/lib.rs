@@ -78,6 +78,13 @@ pub fn matrix_power(
 
     // 4. Call our all-Rust matrix power function
     let result_matrix = matrix_power_rust(&rust_matrix, exponent);
+
+    // 5. Convert the result back into a Python-friendly type, a Vec<Vec<f64>>
+    let result_vecs: Vec<Vec<f64>> = result_matrix
+        .rows()
+        .into_iter()
+        .map(|row| row.to_vec())
+        .collect();
 }
 
 /// A Python module implemented in Rust.
