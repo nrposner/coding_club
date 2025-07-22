@@ -68,6 +68,13 @@ pub fn matrix_power(
     // flatten it, and then collect it into a new vector of floats' 
     // Because we used .into_iter() instead of .iter(), nested_vecs no longer exists beyond this
     // line!
+
+    // 3. Create the ndarray Array from the shape and the flat data
+    let rust_matrix = Array2::from_shape_vec((n_rows, n_cols), flat_vec)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
+                                                                        // !^!
+                                                        // This will return an error if the number 
+                                                        // of elements doesn't match the shape
 }
 
 /// A Python module implemented in Rust.
