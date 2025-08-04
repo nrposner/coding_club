@@ -1,4 +1,4 @@
-Welcome to Integrating Rust into your Python Application!
+Welcome to *Python, Rust, and You: Modern Py-Rust interoperation*!
 
 As we begin, please open up your preferred way to execute python: your terminal, Jupyter Notebook, python script, what have you.
 
